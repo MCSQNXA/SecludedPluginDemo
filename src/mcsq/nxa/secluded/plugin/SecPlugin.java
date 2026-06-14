@@ -378,26 +378,6 @@ public class SecPlugin extends WebSocketClient {
     }
 
     /**
-     * @CreateTime 2024-08-06 14:09:30
-     * @Description 上次 Ping
-     */
-    private volatile long last_ping = 0;
-
-    /**
-     * @CreateTime 2024-08-06 14:07:21
-     * @Description 连接可用
-     */
-    public boolean ping() {
-        if (this.last_ping > System.currentTimeMillis() - 3000) {
-            return true;// 3s 内 不用进行 ping 测试
-        }
-
-        this.last_ping = System.currentTimeMillis();
-
-        return !this.sendWss("Ping", null, true).isEmpty();
-    }
-
-    /**
      * @CreateTime 2024-08-04 23:55:56
      * @Description 序号
      */
