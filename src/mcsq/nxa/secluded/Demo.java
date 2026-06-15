@@ -28,8 +28,8 @@ public class Demo implements SecPluginHandler {
             SecPlugin.thread(new Runnable() {
                 @Override
                 public void run() {
-                    SecPlugin plugin = new SecPlugin("ws://127.0.0.1:24804");
-                    plugin.setAccessToken("y5s9WERi");// 令牌
+                    SecPlugin plugin = new SecPlugin("ws://127.0.0.1:24804/?token=y5s9WERi");// 令牌 方式一
+                    plugin.setAccessToken("y5s9WERi");// 令牌 方式二
                     plugin.setHandler(new Demo());
                     plugin.start();// 启动插件
                     //plugin.stop();// 停止插件

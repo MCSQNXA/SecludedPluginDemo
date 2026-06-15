@@ -435,7 +435,10 @@ public class SecPlugin extends WebSocketClient {
         this.running = true;
 
         try {
-            super.addHeader("Authorization", "Bearer " + this.access_token);// 设置鉴权令牌
+            if (this.access_token != null && !this.access_token.isEmpty()) {// 方式二
+                super.addHeader("Authorization", "Bearer " + this.access_token);// 设置鉴权令牌
+            }
+
             super.connectBlocking();
         } catch (InterruptedException e) {
             printE("[SecPlugin] " + e);

@@ -10,10 +10,11 @@
 
 ### 🔑 鉴权配置
 
-请求时需在 Header 中添加 `Authorization` 字段，格式为 `Bearer <Token>`：
+方式二 请求时需在 Header 中添加 `Authorization` 字段，格式为 `Bearer <Token>`：
 
 ```java
-// super.addHeader("Authorization","Bearer y5s9WERi");
+// 方式一 SecPlugin("ws://127.0.0.1:24804/?token=y5s9WERi");
+// 方式二 super.addHeader("Authorization","Bearer y5s9WERi");
 ```
 
 > 📌 **安全提示**：示例中的 `y5s9WERi` 为**协议令牌**，用户可在 `软件设置 -> 插件协议` 中自行查看和配置。
